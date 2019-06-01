@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "52952823433",
+    "firebase_url": "https://ask-for-libs.firebaseio.com",
+    "project_id": "ask-for-libs",
+    "storage_bucket": "ask-for-libs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52952823433:android:cd051849ff5b48b8",
+        "android_client_info": {
+          "package_name": "com.ask4libs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "52952823433-t504nd8cud9pg32p2cusbt7pjda6va6v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4bPZqc6nNgeV8_CP6azf6qrzVwLbW-ZU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "52952823433-t504nd8cud9pg32p2cusbt7pjda6va6v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
