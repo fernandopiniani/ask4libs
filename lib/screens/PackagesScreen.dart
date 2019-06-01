@@ -26,13 +26,15 @@ class PackagesScreen extends StatelessWidget {
                     DataSnapshot snapshot = snap.data.snapshot;
                     final List<Package> _list =
                         Package.getFromSnapshotList(snapshot)
-                          ..sort((a, b) => int.parse(b.score).compareTo(int.parse(a.score));
+                          ..sort((a, b) =>
+                              int.parse(b.score).compareTo(int.parse(a.score)));
 
                     return ListView.builder(
                         itemCount: _list.length,
                         itemBuilder: (context, index) {
                           return GestureDetector(
-                              onTap: () => _seePackageDetails(context, _list[index].name, _list[index].description),
+                              onTap: () => _seePackageDetails(context,
+                                  _list[index].name, _list[index].description),
                               child: CardWidget(
                                   id: _list[index].id,
                                   name: _list[index].name,
@@ -57,10 +59,13 @@ class PackagesScreen extends StatelessWidget {
     );
   }
 
-  void _seePackageDetails(BuildContext context, String name, String description) async {
+  void _seePackageDetails(
+      BuildContext context, String name, String description) async {
     await Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => PackagesDetailScreen(new Package( name: name, description: description ))),
+      MaterialPageRoute(
+          builder: (context) => PackagesDetailScreen(
+              new Package(name: name, description: description))),
     );
   }
 }

@@ -43,6 +43,7 @@ class _PackagesDetailScreen extends State<PackagesDetailScreen> {
               controller: _descriptionController,
               decoration: InputDecoration(labelText: 'Description'),
               enabled: false,
+              maxLines: null
             ),
             Padding(padding: new EdgeInsets.all(5.0)),
           ],
