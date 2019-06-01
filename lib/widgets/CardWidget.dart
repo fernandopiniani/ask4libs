@@ -1,10 +1,13 @@
+import 'package:ask4libs/widgets/ScoreWidget.dart';
 import 'package:flutter/material.dart';
 
 class CardWidget extends StatelessWidget {
-  CardWidget({this.name, this.description});
+  CardWidget({this.id, this.name, this.description, this.score});
 
+  final String id;
   final String name;
   final String description;
+  final String score;
 
   @override
   Widget build(BuildContext context) {
@@ -27,12 +30,17 @@ class CardWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
-                      this.name,
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                    Text(this.description),
+                    ScoreWidget(score: score, id: id),
+                    Padding(
+                        padding: EdgeInsets.fromLTRB(0, 7.5, 0, 7.5),
+                        child: Text(
+                          this.name,
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        )),
+                    Padding(
+                        padding: EdgeInsets.fromLTRB(0, 7.5, 0, 7.5),
+                        child: Text(this.description)),
                   ]))
         ]));
   }

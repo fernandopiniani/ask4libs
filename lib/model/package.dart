@@ -11,14 +11,23 @@ class Package {
 
   static List<Package> getFromSnapshotList(DataSnapshot snapshot) {
     List<Package> _list = new List<Package>();
-    for (var item in snapshot.value) {
+    snapshot.value.forEach((key, value) {
       _list.add(Package(
-          id: item['id'],
-          name: item['name'],
-          description: item['description'],
-          score: item['score'],
-          createdUser: item['createdUser']));
-    }
+          id: key,
+          name: value['name'],
+          description: value['description'],
+          score: value['score'],
+          createdUser: value['createdUser']));
+    });
     return _list;
+  }
+
+  static Package getFromSnapshot(DataSnapshot snapshot) {
+    return Package(
+        id: snapshot.value['id'],
+        name: snapshot.value['name'],
+        description: snapshot.value['description'],
+        score: snapshot.value['score'],
+        createdUser: snapshot.value['createdUser']);
   }
 }

@@ -16,22 +16,24 @@ class PackagesScreen extends StatelessWidget {
         body: Container(
             decoration: BoxDecoration(color: Colors.black12),
             child: StreamBuilder(
-                stream: bloc.packagesReference.onValue,
+                stream: bloc.getPackages(),
                 builder: (context, snap) {
                   if (snap.hasData &&
                       !snap.hasError &&
                       snap.data.snapshot.value != null) {
                     DataSnapshot snapshot = snap.data.snapshot;
                     final List<Package> _list =
-                        Package.getFromSnapshotList(snapshot);
+                        Package.getFromSnapshotList(snapshot)
+                          ..sort((a, b) => b.score.compareTo(a.score));
 
                     return ListView.builder(
                         itemCount: _list.length,
                         itemBuilder: (context, index) {
                           return CardWidget(
-                            name: _list[index].name,
-                            description: _list[index].description,
-                          );
+                              id: _list[index].id,
+                              name: _list[index].name,
+                              description: _list[index].description,
+                              score: _list[index].score);
                         });
                   } else {
                     return Center(child: CircularProgressIndicator());
