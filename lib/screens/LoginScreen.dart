@@ -5,10 +5,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'DetailScreen.dart'; //important fix
 
-void main() {
-  runApp(new MyApp());
-}
-
 class UserDetails {
   final String providerId;
 
@@ -50,7 +46,7 @@ class UserInfoDetails {
   final String email;
 }
 
-class MyApp extends StatelessWidget {
+class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
