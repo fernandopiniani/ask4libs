@@ -17,4 +17,14 @@ class PackagesBLoC {
           .update({'score': (int.parse(package.score) + 1).toString()});
     });
   }
+
+  Future<void> createPackage(String name, String description) {
+    return _packagesReference.push().set({
+      'name': name,
+      'description': description,
+      'score': '0',
+      'createdUser': 'Rafael',
+      'dateAdded': '2019-06-01'
+    });
+  }
 }

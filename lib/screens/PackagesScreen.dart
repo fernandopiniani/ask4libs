@@ -1,6 +1,7 @@
 import 'package:ask4libs/bloc/packages.bloc.dart';
 import 'package:ask4libs/model/package.dart';
 import 'package:ask4libs/widgets/CardWidget.dart';
+import 'package:ask4libs/screens/AddPackageScreen.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
@@ -40,9 +41,16 @@ class PackagesScreen extends StatelessWidget {
                   }
                 })),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () => _createNewPackage(context),
           tooltip: 'Add Package',
           child: Icon(Icons.add),
         ));
+  }
+
+  void _createNewPackage(BuildContext context) async {
+    await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => AddPackageScreen(new Package())),
+    );
   }
 }

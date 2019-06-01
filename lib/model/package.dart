@@ -6,8 +6,15 @@ class Package {
   String description;
   String score;
   String createdUser;
+  String dateAdded;
 
-  Package({this.id, this.name, this.description, this.score, this.createdUser});
+  Package(
+      {this.id,
+      this.name,
+      this.description,
+      this.score,
+      this.createdUser,
+      this.dateAdded});
 
   static List<Package> getFromSnapshotList(DataSnapshot snapshot) {
     List<Package> _list = new List<Package>();
