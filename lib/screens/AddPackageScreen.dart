@@ -47,15 +47,6 @@ class _AddPackageScreen extends State<AddPackageScreen> {
               child: Text('Add'),
               onPressed: () { bloc.createPackage(_nameController.text, _descriptionController.text)
                   .then((_) { Navigator.pop(context); });
-
-//                else {
-//                  notesReference.push().set({
-//                    'title': _titleController.text,
-//                    'description': _descriptionController.text
-//                  }).then((_) {
-//                    Navigator.pop(context);
-//                  });
-//                }
               },
             ),
           ],
