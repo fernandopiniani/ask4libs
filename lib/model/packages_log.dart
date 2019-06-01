@@ -1,14 +1,14 @@
 import 'package:firebase_database/firebase_database.dart';
 
-class Packages {
+class PackagesLog {
   String _id;
   String _name;
   String _user;
   DateTime _dateAdded;
 
-  Packages(this._id, this._name, this._user, this._dateAdded);
+  PackagesLog(this._id, this._name, this._user, this._dateAdded);
 
-  Packages.map(dynamic obj) {
+  PackagesLog.map(dynamic obj) {
     this._id = obj['id'];
     this._name = obj['name'];
     this._user = obj['user'];
@@ -20,7 +20,7 @@ class Packages {
   DateTime get description => _dateAdded;
   String get createdUser => _user;
 
-  Packages.fromSnapshot(DataSnapshot snapshot) {
+  PackagesLog.fromSnapshot(DataSnapshot snapshot) {
     _id = snapshot.key;
     _name = snapshot.value['name'];
     _dateAdded = snapshot.value['user'];
