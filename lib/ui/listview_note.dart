@@ -24,8 +24,6 @@ class _ListViewNoteState extends State<ListViewNote> {
 
     items = new List();
 
-    //FirebaseApp.initializeApp(this);
-
     _onNoteAddedSubscription = notesReference.onChildAdded.listen(_onNoteAdded);
     _onNoteChangedSubscription = notesReference.onChildChanged.listen(_onNoteUpdated);
   }
