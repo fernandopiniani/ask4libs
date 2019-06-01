@@ -26,7 +26,7 @@ class PackagesScreen extends StatelessWidget {
                     DataSnapshot snapshot = snap.data.snapshot;
                     final List<Package> _list =
                         Package.getFromSnapshotList(snapshot)
-                          ..sort((a, b) => b.score.compareTo(a.score));
+                          ..sort((a, b) => int.parse(b.score).compareTo(int.parse(a.score));
 
                     return ListView.builder(
                         itemCount: _list.length,
