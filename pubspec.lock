@@ -7,7 +7,11 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
     version: "2.2.0"
+=======
+    version: "2.1.0"
+>>>>>>> b4bcab15d5abb617b4b292c1c9c940000c41f591
   boolean_selector:
     dependency: transitive
     description:
@@ -36,6 +40,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.2"
+<<<<<<< HEAD
   firebase_auth:
     dependency: "direct main"
     description:
@@ -50,6 +55,22 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.0+3"
+=======
+  firebase_core:
+    dependency: "direct main"
+    description:
+      name: firebase_core
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.0+3"
+  firebase_database:
+    dependency: "direct main"
+    description:
+      name: firebase_database
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.2"
+>>>>>>> b4bcab15d5abb617b4b292c1c9c940000c41f591
   flutter:
     dependency: "direct main"
     description: flutter
@@ -94,14 +115,22 @@ packages:
       name: pedantic
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
     version: "1.7.0"
+=======
+    version: "1.5.0"
+>>>>>>> b4bcab15d5abb617b4b292c1c9c940000c41f591
   quiver:
     dependency: transitive
     description:
       name: quiver
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
     version: "2.0.3"
+=======
+    version: "2.0.2"
+>>>>>>> b4bcab15d5abb617b4b292c1c9c940000c41f591
   sky_engine:
     dependency: transitive
     description: flutter
@@ -148,7 +177,11 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
     version: "0.2.5"
+=======
+    version: "0.2.4"
+>>>>>>> b4bcab15d5abb617b4b292c1c9c940000c41f591
   typed_data:
     dependency: transitive
     description:
