@@ -2,6 +2,7 @@ import 'package:ask4libs/bloc/packages.bloc.dart';
 import 'package:ask4libs/model/package.dart';
 import 'package:ask4libs/widgets/CardWidget.dart';
 import 'package:ask4libs/screens/AddPackageScreen.dart';
+import 'package:ask4libs/screens/PackagesDetailScreen.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
@@ -30,11 +31,13 @@ class PackagesScreen extends StatelessWidget {
                     return ListView.builder(
                         itemCount: _list.length,
                         itemBuilder: (context, index) {
-                          return CardWidget(
-                              id: _list[index].id,
-                              name: _list[index].name,
-                              description: _list[index].description,
-                              score: _list[index].score);
+                          return GestureDetector(
+                              onTap: () => _seePackageDetails(context, _list[index].name, _list[index].description),
+                              child: CardWidget(
+                                  id: _list[index].id,
+                                  name: _list[index].name,
+                                  description: _list[index].description,
+                                  score: _list[index].score));
                         });
                   } else {
                     return Center(child: CircularProgressIndicator());
@@ -51,6 +54,13 @@ class PackagesScreen extends StatelessWidget {
     await Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => AddPackageScreen(new Package())),
+    );
+  }
+
+  void _seePackageDetails(BuildContext context, String name, String description) async {
+    await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => PackagesDetailScreen(new Package( name: name, description: description ))),
     );
   }
 }
