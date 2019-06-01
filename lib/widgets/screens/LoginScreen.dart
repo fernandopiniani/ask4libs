@@ -76,12 +76,13 @@ class UserOptionsState extends State<UserOptions> {
         ));
 
     GoogleSignInAccount googleSignInAccount = await _gSignIn.signIn();
-    GoogleSignInAuthentication authentication =
-        await googleSignInAccount.authentication;
 
-    FirebaseUser user = await _fAuth.signInWithGoogle(
-        idToken: authentication.idToken,
-        accessToken: authentication.accessToken);
+    GoogleSignInAuthentication googleAuth = await googleSignInAccount.authentication;
+    AuthCredential credential = GoogleAuthProvider.getCredential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+    FirebaseUser user = await _fAuth.signInWithCredential(credential);
 
     UserInfoDetails userInfo = new UserInfoDetails(
         user.providerId, user.displayName, user.email, user.photoUrl, user.uid);
