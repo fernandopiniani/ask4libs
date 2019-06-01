@@ -1,4 +1,4 @@
- import 'package:ask4libs/screens/PackagesScreen.dart';
+import 'package:ask4libs/screens/PackagesScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:ask4libs/screens/LoginScreen.dart';
 
@@ -9,8 +9,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Ask 4 libs',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.indigo,
       ),
       home: PackagesScreen(),
     );

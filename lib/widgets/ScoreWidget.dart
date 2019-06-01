@@ -12,6 +12,7 @@ class ScoreWidget extends StatelessWidget {
     PackagesBLoC bloc = PackagesBLoC();
 
     return Container(
+        width: 80,
         margin: EdgeInsets.fromLTRB(0, 5, 0, 5),
         padding: EdgeInsets.all(7),
         decoration: BoxDecoration(
